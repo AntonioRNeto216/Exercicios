@@ -4,13 +4,14 @@ using System.Collections.Generic;
 namespace C_ {
     class Program {
         static void Main() { // usado para chamar a função do exercício
-            
+            int[] array = new int[9] {10, 5, 20, 20, 4, 5, 2, 25, 1};
+            breakingRecords(array);
         }
 
         /* 
             MigratoryBirds: https://www.hackerrank.com/challenges/migratory-birds/problem?h_r=profile
         */
-        static int MigratoryBirds(List<int> arr) 
+        static int migratoryBirds(List<int> arr) 
         {
             Dictionary<int,int> dicFinal = new Dictionary<int, int>(); // key: ID , value: frequency
             foreach(int conteudoPosicao in arr)
@@ -42,5 +43,30 @@ namespace C_ {
             return idRetorno;
         }
         ////
+
+        /*
+            BreakingRecords: https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+        */
+        static int[] breakingRecords(int[] scores) {
+            int min = scores[0], max = scores[0], countMin = 0, countMax = 0;
+            for(int i = 0; i < scores.Length; i++)
+            {
+                if(i!=0) {
+                    if(scores[i] > max)
+                    {
+                        max = scores[i];
+                        countMax++;
+                    } else if(scores[i] < min)
+                    {
+                        min = scores[i];
+                        countMin++;
+                    }
+                }
+            }
+            return new int[2] {countMax, countMin};
+        }
+        ////
+
+        
     }
 }
