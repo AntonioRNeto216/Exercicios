@@ -4,8 +4,7 @@ using System.Collections.Generic;
 namespace C_ {
     class Program {
         static void Main() { // usado para chamar a função do exercício
-            int[] array = new int[9] {10, 5, 20, 20, 4, 5, 2, 25, 1};
-            breakingRecords(array);
+        
         }
 
         /* 
@@ -66,7 +65,6 @@ namespace C_ {
             return new int[2] {countMax, countMin};
         }
         ////
-
         
     }
 }
